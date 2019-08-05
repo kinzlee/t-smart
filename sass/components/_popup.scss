@@ -1,0 +1,97 @@
+.popup{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, .85);
+    z-index: 9999;
+    opacity: 0;
+    visibility:hidden;
+    transition: all .3s;
+
+    @include respond(tab-port) {
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+    }
+
+
+    &:target{
+        opacity: 1;
+        visibility: visible;
+    }
+
+&:target &_content {
+opacity: 1;
+transform: translate(-50%, -50%) scale(1);
+}
+    &_content{
+        width: 75%; 
+        background-color: $color-white;
+        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 3px;
+        display: table;
+        overflow: hidden;
+        transform: translate(-50%, -50%) scale(.15);
+        opacity: 0;
+        transition: all .4s .2s;
+    }
+    &_right{
+        width: 66.6667%;
+        display: table-cell;
+        padding: 3rem 5rem;
+    }
+    &_left{
+        width: 33.333%;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    &_text{
+        font-size: 1.5rem;
+        margin-bottom: 4rem;
+        column-count: 2;
+        column-gap: 4rem;
+        column-rule: 1px solid $color-grey-light-2;
+        hyphens: auto;
+
+        @include respond(tab-port) {
+            font-size: 1rem;
+            margin-bottom: 3rem;
+            column-gap: 3rem;
+        }
+
+        @include respond(phone) {
+            font-size: .8rem;
+            margin-bottom: 2rem;
+            column-gap: 2rem;
+        }
+
+    }
+    &_img{
+        display: block;
+        width: 100%;
+    }
+
+    &_close{
+        &:link,
+        &:visited{
+            color: $color-grey-dark;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            display: inline-block;
+            transition: all .2s;
+        }
+        
+        &:hover{
+            color: $color-primary;
+        }
+    }
+    
+}

@@ -1,0 +1,60 @@
+.row {
+    // the width or max width of a site is usually default at 1140px and 10px is set to 1rem on our code
+    max-width: $gird-width;
+    margin: 0 auto; // this is the trick that is used to center a block element inside another block element
+    
+     &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+        @include respond(tab-port) {
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+    @include respond(tab-port) {
+        max-width: 40rem;
+        padding: 0, 3rem;           
+    }
+    @include clearFix;
+    [class^="col-"] {
+        float: left;
+
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+            /*
+            @include respond(tab-land) {
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+            }
+            */
+            @include respond(tab-port) {
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+            }
+        }
+        /*
+        @include respond(tab-land) {
+            width: 100% !important;
+        }
+        */
+        @include respond(tab-port) {
+            width: 100% !important;
+        }
+    }
+    .col-1-of-2 {
+        width: calc((100% - #{$gutter-horizontal}) / 2);
+    }
+    .col-1-of-3 {
+        width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+    }
+    .col-2-of-3 {
+        width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal} );
+    }
+    .col-1-of-4 {
+        width: calc((100% - 3 *#{$gutter-horizontal}) / 4);
+    }
+    .col-2-of-4 {
+        width: calc(2 * ((100% - 3 *#{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
+    }
+    .col-3-of-4 {
+    width: calc(3 * ((100% - 3 *#{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal});
+    }
+}

@@ -1,0 +1,93 @@
+.section-about{
+    background-color: $color-grey-light-2;
+    padding: 38rem 0;
+    margin-top: -29.6vh;    
+    
+    @include respond(tab-port) {
+        padding: 28rem 0;
+    }
+
+}
+
+.section-features{
+    padding: 15rem 0;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)),
+         url( ../img/img-cover.jpg);
+         margin-top: -9.5rem;    
+        background-size: cover;
+        transform: skewY(-7deg);
+        & > *{
+            transform: skewY(7deg);
+        }
+
+        @include respond(tab-port) {
+            padding: 8.5rem 0;
+        }
+
+}
+
+.section-designs{
+    background-color: $color-grey-light-2;
+    padding: 20rem 0 20rem 0; 
+    margin-top: -10rem;
+    @include respond(tab-port) {
+        padding: 15rem 0 15rem 0;
+    }
+
+}
+
+.section-stories{
+    position: relative;
+    padding: 15rem 0;
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
+
+
+}
+
+.section-book{
+    padding: 15rem 0;
+    background-image: linear-gradient(to right top, $color-primary-light, $color-primary-dark);
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
+
+}
+
+.book{
+    background-image: linear-gradient(100deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%, transparent 50%), url(../img/bim-2.jpg);
+    background-size: 100%;
+    border-radius: 3.2px;
+    box-shadow: 0 2rem 4rem rgba($color-black, .28);
+
+
+    @include respond(tab-land) {
+    background-image: linear-gradient(100deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 65%, transparent 7  65%), url(../img/bim-2.jpg);
+    background-size: cover;
+    }
+
+    @include respond (tab-port) {
+    background-image: linear-gradient(to the right, rgba($color-white, .9) 0%, rgba($color-white, .9) 100%), 
+    url(../img/bim-2.jpg);
+
+    }
+    &_form{
+        width: 50%;
+        padding: 6rem;
+
+        @include respond(tab-land) {
+            width: 55%;
+        }
+
+        @include respond(tab-port) {
+            width: 100%;
+        }
+
+    }
+}
